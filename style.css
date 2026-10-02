@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary: #5b3df0;
+    --primary-dark: #4429c9;
+    --accent: #00d4a0;
+    --danger: #ef4a5f;
+    --bg: #f3f2fb;
+    --card: #ffffff;
+    --text: #1f2333;
+    --text-light: #6b7086;
+    --border: #e7e6f4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    padding: 0;
+    color: var(--text);
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    padding: 16px 32px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    box-shadow: 0 2px 12px rgba(91, 61, 240, 0.25);
+}
+
+.navbar .brand {
+    font-weight: 700;
+    font-size: 18px;
+    margin-right: 24px;
+    white-space: nowrap;
+}
+
+.navbar a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    margin-right: 18px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: 0.15s;
+}
+
+.navbar a:hover {
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+.navbar .nav-links { display: flex; align-items: center; flex-wrap: wrap; }
+.navbar .nav-right { display: flex; align-items: center; font-size: 14px; }
+
+/* ---------- LAYOUT ---------- */
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    background: var(--card);
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(31, 35, 51, 0.06);
+}
+
+h2 { margin-top: 0; font-weight: 600; }
+h3 { font-weight: 600; color: var(--text); margin-top: 28px; }
+
+/* ---------- STAT CARDS ---------- */
+.stats {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, var(--primary), #7c5cf5);
+    color: white;
+    padding: 22px;
+    border-radius: 12px;
+    flex: 1;
+    min-width: 160px;
+    text-align: left;
+    box-shadow: 0 6px 16px rgba(91, 61, 240, 0.25);
+}
+
+.stat-box:nth-child(2) { background: linear-gradient(135deg, #00b894, var(--accent)); box-shadow: 0 6px 16px rgba(0, 184, 148, 0.25); }
+.stat-box:nth-child(3) { background: linear-gradient(135deg, #ff9f43, #ffb976); box-shadow: 0 6px 16px rgba(255, 159, 67, 0.25); }
+
+.stat-box h2 {
+    margin: 0 0 4px 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.stat-box p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ---------- TABLES ---------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+table th, table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+table th {
+    background-color: #faf9ff;
+    color: var(--text-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+}
+
+table tr:hover td { background-color: #faf9ff; }
+
+/* ---------- FORMS ---------- */
+label {
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: var(--text);
+}
+
+input[type=text], input[type=password], input[type=date], select {
+    width: 100%;
+    padding: 11px 12px;
+    margin: 0 0 18px 0;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-size: 14px;
+    background: #fcfcff;
+    transition: 0.15s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: white;
+}
+
+button, input[type=submit] {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    transition: 0.15s;
+}
+
+button:hover, input[type=submit]:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+button[type=button] {
+    background: #eeedf9;
+    color: var(--text);
+    margin-left: 10px;
+}
+
+/* ---------- MESSAGES / BADGES ---------- */
+.error { color: var(--danger); font-weight: 600; background: #fdeced; padding: 10px 14px; border-radius: 8px; }
+.success { color: #0d9668; font-weight: 600; background: #e4f9f1; padding: 10px 14px; border-radius: 8px; }
+
+.badge-active { background: #e4f9f1; color: #0d9668; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.badge-expired { background: #fdeced; color: var(--danger); padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+
+/* ---------- LOGIN PAGE ---------- */
+body.login-page {
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        #8a5cf6,
+        var(--accent)
+    );
+}
+
+.login-card {
+    background: white;
+    width: 380px;
+    padding: 36px 32px;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.login-card h2 {
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.login-sub {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 13px;
+    margin-bottom: 22px;
+}
+
+/* role tab selector */
+.role-tabs {
+    display: flex;
+    background: #f1f0fb;
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 20px;
+}
+
+.role-tabs input[type=radio] { display: none; }
+
+.role-tabs label {
+    flex: 1;
+    text-align: center;
+    padding: 9px 0;
+    margin: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-light);
+    transition: 0.15s;
+}
+
+.role-tabs input[type=radio]:checked + label {
+    background: white;
+    color: var(--primary);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.login-card input[type=submit] { width: 100%; padding: 13px; margin-top: 6px; }
